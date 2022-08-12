@@ -1,25 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
   userForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.minLength(5), Validators.maxLength(25)])
+    password: new FormControl('', [
+      Validators.minLength(5),
+      Validators.maxLength(25),
+    ]),
   });
 
   get email() {
-    return this.userForm.get("email");
+    return this.userForm.get('email');
   }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  get password() {
+    return this.userForm.get('password');
   }
 
+  constructor(public router: Router) {}
+
+  ngOnInit(): void {}
 }

@@ -7,16 +7,34 @@
     <mat-card-content [formGroup]="userForm">
       <mat-form-field appearance="fill">
         <mat-label>E-mail</mat-label>
-        <input matInput placeholder="Enter e-mail" type="email" formControlName="email">
+        <input
+          matInput
+          placeholder="Enter e-mail"
+          type="email"
+          formControlName="email"
+        />
         <mat-error *ngIf="email">
-        Please enter a valid email address
+          Please enter a valid email address
         </mat-error>
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Password</mat-label>
-        <input matInput placeholder="Password">
+        <input
+          matInput
+          placeholder="Password"
+          type="password"
+          formControlName="password"
+          value=""
+        />
+        <mat-error *ngIf="password"> Please enter a valid password </mat-error>
       </mat-form-field>
+      <button
+        mat-raised-button
+        [disabled]="password?.invalid || email?.invalid"
+        (click)="this.router.navigate(['/', 'dashboard'])"
+      >
+        Submit
+      </button>
     </mat-card-content>
   </mat-card>
 </div>
-
