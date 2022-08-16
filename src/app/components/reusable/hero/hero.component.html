@@ -1,0 +1,15 @@
+<div
+  class="hero-image"
+  [ngStyle]="{
+    'background-image':
+      'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(' +
+      imageUrl +
+      ')'
+  }"
+>
+  <div class="hero-text">
+    <h1>{{header}}</h1>
+    <p>{{subheader}}</p>
+    <button mat-raised-button>{{buttonText}}</button>
+  </div>
+</div>

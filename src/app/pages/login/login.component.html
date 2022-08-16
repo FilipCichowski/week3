@@ -1,4 +1,4 @@
-<app-header></app-header>
+<navigation-header></navigation-header>
 <div class="content-wrapper">
   <mat-card class="example-card">
     <mat-card-title-group>
@@ -34,6 +34,12 @@
         (click)="this.router.navigate(['/', 'dashboard'])"
       >
         Submit
+      </button>
+      <button
+        mat-button
+        (click)="this.router.navigate(['/', 'register'])"
+      >
+        Don't have account? Register!
       </button>
     </mat-card-content>
   </mat-card>

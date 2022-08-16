@@ -2,12 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { LandingComponent } from './components/landing/landing.component';
-import { AboutComponent } from './components/about/about.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { LoginComponent } from './components/login/login.component';
+import { LandingComponent } from './pages/landing/landing.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HeaderComponent } from './components/reusable/header/header.component';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
@@ -18,16 +14,16 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { UsserSelectableModule } from './usser-selectable/usser-selectable.module';
+import { RegisterComponent } from './pages/register/register.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
-    AboutComponent,
-    ContactComponent,
-    LoginComponent,
-    HeaderComponent,
     DashboardComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,8 +37,11 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
+    UsserSelectableModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
+  exports: [],
 })
 export class AppModule {}
