@@ -1,11 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CustomValidators } from '../../../providers/CustomValidators';
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +10,7 @@ import { CustomValidators } from '../../../providers/CustomValidators';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
-  success = '';
+  hide = true;
   registerForm = new FormGroup(
     {
       firstName: new FormControl('', [Validators.required]),
@@ -28,33 +25,16 @@ export class RegisterComponent {
     [CustomValidators.passwordMatch('password', 'confirmPassword')]
   );
 
-  submitted = false;
-
-  constructor() {}
-
-  ngOnInit() {}
-
-  // convenience getter for easy access to form fields
-  hide = true;
   get f() {
     return this.registerForm.controls;
   }
 
-  get passwordMatchError() {
-    return (
-      this.registerForm.getError('mismatch') &&
-      this.registerForm.get('confirmPassword')?.touched
-    );
-  }
-
   onSubmit() {
-    this.submitted = true;
-
-    // stop here if form is invalid
-    if (this.registerForm.invalid) {
-      return;
-    }
-
-    this.success = JSON.stringify(this.registerForm.value);
+    this.router.navigate(['menu', 'login']);
+    let snackBarRef = this.snackBar.open('Successful registration!');
   }
+
+  constructor(private router: Router, private snackBar: MatSnackBar) {}
+
+  ngOnInit() {}
 }

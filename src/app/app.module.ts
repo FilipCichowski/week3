@@ -17,6 +17,12 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { UsserSelectableModule } from './usser-selectable/usser-selectable.module';
 import { RegisterComponent } from './pages/register/register.component';
 import { MatIconModule } from '@angular/material/icon';
+import {
+  MatSnackBarModule,
+  MAT_SNACK_BAR_DEFAULT_OPTIONS,
+} from '@angular/material/snack-bar';
+import { MatTableModule } from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -39,8 +45,13 @@ import { MatIconModule } from '@angular/material/icon';
     ReactiveFormsModule,
     UsserSelectableModule,
     MatIconModule,
+    MatSnackBarModule,
+    MatTableModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 2000 } },
+  ],
   bootstrap: [AppComponent],
   exports: [],
 })
