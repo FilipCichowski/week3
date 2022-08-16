@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { AboutComponent } from '../pages/about/about.component';
-import { ContactComponent } from '../pages/contact/contact.component';
-import { LoginComponent } from '../pages/login/login.component';
+import { AboutComponent } from '../../pages/about/about.component';
+import { ContactComponent } from '../../pages/contact/contact.component';
+import { LoginComponent } from '../../pages/login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HeaderComponent } from '../components/reusable/header/header.component';
+import { HeaderComponent } from '../../components/reusable/header/header.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { HeroComponent } from '../components/reusable/hero/hero.component';
+import { HeroComponent } from '../../components/reusable/hero/hero.component';
 
 const routes: Routes = [
   { path: 'about', component: AboutComponent },

@@ -13,9 +13,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { UsserSelectableModule } from './usser-selectable/usser-selectable.module';
-import { RegisterComponent } from './pages/register/register.component';
+import { UsserSelectableModule } from './modules/usser-selectable/usser-selectable.module';
 import { MatIconModule } from '@angular/material/icon';
 import {
   MatSnackBarModule,
@@ -25,12 +23,7 @@ import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LandingComponent,
-    DashboardComponent,
-    RegisterComponent,
-  ],
+  declarations: [AppComponent, LandingComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

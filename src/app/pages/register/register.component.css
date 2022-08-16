@@ -1,8 +1,9 @@
 .form-wrapper {
-  margin: 10% auto;
+  margin: auto;
   width: 30%;
   display: flex;
   flex-direction: column;
+  padding-top: 20vh;
 }
 
 .password-wrapper {
