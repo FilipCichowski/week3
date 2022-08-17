@@ -12,6 +12,7 @@ import { HeaderComponent } from '../../components/reusable/header/header.compone
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { HeroComponent } from '../../components/reusable/hero/hero.component';
+import { SharedModuleModule } from '../shared-module/shared-module.module';
 
 const routes: Routes = [
   { path: 'about', component: AboutComponent },
@@ -43,6 +44,7 @@ const routes: Routes = [
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    SharedModuleModule,
   ],
 })
 export class UsserSelectableModule {}

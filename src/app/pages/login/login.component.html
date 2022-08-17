@@ -1,3 +1,4 @@
+<navigation-header></navigation-header>
 <div class="content-wrapper">
   <mat-card class="example-card">
     <mat-card-title-group>
@@ -30,7 +31,7 @@
       <button
         mat-raised-button
         [disabled]="password?.invalid || email?.invalid"
-        (click)="this.router.navigate(['/', 'dashboard'])"
+        (click)="onLogin()"
       >
         Submit
       </button>

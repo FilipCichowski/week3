@@ -21,9 +21,16 @@ import {
 } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
+import { PasswordStrengthMeterModule } from 'angular-password-strength-meter';
+import { DisplayUserInfoDialogComponent } from './components/display-user-info-dialog/display-user-info-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [AppComponent, LandingComponent],
+  declarations: [
+    AppComponent,
+    LandingComponent,
+    DisplayUserInfoDialogComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -41,6 +48,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatSnackBarModule,
     MatTableModule,
     HttpClientModule,
+    MatDialogModule,
+    PasswordStrengthMeterModule.forRoot(),
   ],
   providers: [
     { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 2000 } },

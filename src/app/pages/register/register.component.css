@@ -11,3 +11,8 @@
   flex-direction: column;
 }
 
+password-strength-meter {
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+

@@ -2,5 +2,6 @@
   <img [src]="logoPath" class="logo" alt="logo">
   <div class="header-right">
     <button mat-button (click)="this.router.navigate(['/', 'home'])">Home</button>
+    <button mat-button *ngIf="canLogout" (click)="onClickLogout()">Logout</button>
   </div>
 </div>

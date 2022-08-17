@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { LandingComponent } from './pages/landing/landing.component';
+import { AuthService } from './services/auth.service';
+import { AuthGuardGuard } from './auth-guard.guard';
 
 const routes: Routes = [
   { path: 'home', component: LandingComponent },
@@ -13,6 +15,7 @@ const routes: Routes = [
       import('./modules/dashboard/dashboard.module').then(
         (mod) => mod.DashboardModule
       ),
+    canActivate: [AuthGuardGuard],
   },
   {
     path: 'register',

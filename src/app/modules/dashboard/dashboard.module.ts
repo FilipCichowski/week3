@@ -4,6 +4,7 @@ import { DashboardComponent } from '../../pages/dashboard/dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatTableModule } from '@angular/material/table';
 import { SharedModuleModule } from '../shared-module/shared-module.module';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 const routes: Routes = [{ path: '', component: DashboardComponent }];
 
@@ -14,6 +15,7 @@ const routes: Routes = [{ path: '', component: DashboardComponent }];
     RouterModule.forChild(routes),
     MatTableModule,
     SharedModuleModule,
+    MatProgressSpinnerModule,
   ],
 })
 export class DashboardModule {}

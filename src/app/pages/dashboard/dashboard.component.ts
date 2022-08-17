@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { UserDataService } from '../../user-data.service';
+import { UserDataService } from '../../services/user-data.service';
 import { catchError, Observable, of } from 'rxjs';
-import { User } from '../../user-interface';
+import { User } from '../../interfaces/user-interface';
 import { MatTableDataSource } from '@angular/material/table';
+import { DisplayUserInfoDialogComponent } from '../../components/display-user-info-dialog/display-user-info-dialog.component';
+import { DisplayUserInfoService } from '../../services/display-user-info.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,7 +18,17 @@ export class DashboardComponent implements OnInit {
 
   dataSource!: MatTableDataSource<User[]>;
 
-  constructor(private userService: UserDataService) {}
+  highlight(row: any, evt: any) {
+    console.log(evt, row);
+    this.displauUserInfoService.openUserInfoDialog(row);
+  }
+
+  constructor(
+    private userService: UserDataService,
+    private displauUserInfoService: DisplayUserInfoService
+  ) {
+    console.log(this.dataSource);
+  }
 
   ngOnInit(): void {
     this.result$ = this.userService.getUsers().pipe(
