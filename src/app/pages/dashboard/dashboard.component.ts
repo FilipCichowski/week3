@@ -21,14 +21,13 @@ export class DashboardComponent implements OnInit {
   highlight(row: any, evt: any) {
     console.log(evt, row);
     this.displauUserInfoService.openUserInfoDialog(row);
+    this.displauUserInfoService.addUserIdToURL(row.id);
   }
 
   constructor(
     private userService: UserDataService,
     private displauUserInfoService: DisplayUserInfoService
-  ) {
-    console.log(this.dataSource);
-  }
+  ) {}
 
   ngOnInit(): void {
     this.result$ = this.userService.getUsers().pipe(
