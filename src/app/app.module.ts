@@ -13,7 +13,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { UsserSelectableModule } from './modules/usser-selectable/usser-selectable.module';
+import { Module } from './modules/menu/module';
 import { MatIconModule } from '@angular/material/icon';
 import {
   MatSnackBarModule,
@@ -43,7 +43,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    UsserSelectableModule,
+    Module,
     MatIconModule,
     MatSnackBarModule,
     MatTableModule,

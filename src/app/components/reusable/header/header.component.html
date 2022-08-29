@@ -1,9 +1,9 @@
 <div class="header">
   <img [src]="logoPath" class="logo" alt="logo">
   <div class="header-right">
-    <button mat-button (click)="this.router.navigate(['/', 'home'])">Home</button>
-    <button mat-button (click)="this.router.navigate(['menu', 'about'])">About</button>
-    <button mat-button (click)="this.router.navigate(['menu', 'contact'])">Contact</button>
-    <button mat-button (click)="this.router.navigate(['menu', 'login'])">Login</button>
+    <button mat-button routerLink="/home">Home</button>
+    <button mat-button routerLink="/menu/about">About</button>
+    <button mat-button routerLink="/menu/contact">Contact</button>
+    <button mat-button routerLink="/menu/login">Login</button>
   </div>
 </div>

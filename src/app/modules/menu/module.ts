@@ -47,4 +47,4 @@ const routes: Routes = [
     SharedModuleModule,
   ],
 })
-export class UsserSelectableModule {}
+export class Module {}

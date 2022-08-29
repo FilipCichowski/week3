@@ -27,8 +27,8 @@ const routes: Routes = [
   {
     path: 'menu',
     loadChildren: () =>
-      import('./modules/usser-selectable/usser-selectable.module').then(
-        (mod) => mod.UsserSelectableModule
+      import('./modules/menu/module').then(
+        (mod) => mod.Module
       ),
   },
 ];
