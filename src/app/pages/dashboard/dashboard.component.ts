@@ -22,15 +22,12 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   highlight(row: any, evt: any) {
     this.displayUserInfoService.addUserIdToURL(row.id);
-    this.displayUserInfoService.openUserInfoDialog(row);
-
   }
 
   constructor(
     private userService: UserDataService,
     private displayUserInfoService: DisplayUserInfoService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
   ) {}
 
   ngOnInit(): void {
