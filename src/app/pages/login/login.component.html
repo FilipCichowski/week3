@@ -3,7 +3,7 @@
     <mat-card-title-group>
       <mat-card-title>Enter e-mail and password</mat-card-title>
     </mat-card-title-group>
-    <mat-card-content [formGroup]="userForm" test-id="form">
+    <mat-card-content [formGroup]="userForm" test-id="form" (ngSubmit)="onLogin()">
       <mat-form-field appearance="fill">
         <mat-label>E-mail</mat-label>
         <input
@@ -11,6 +11,7 @@
           placeholder="Enter e-mail"
           type="email"
           formControlName="email"
+          test-id="email"
         />
         <mat-error *ngIf="email && email.touched">
           Please enter a valid email address
@@ -24,13 +25,15 @@
           type="password"
           formControlName="password"
           value=""
+          test-id="password"
         />
         <mat-error *ngIf="password && password.touched"> Please enter a valid password </mat-error>
       </mat-form-field>
       <button
         mat-raised-button
-        [disabled]="password?.invalid || email?.invalid"
+        [disabled]="!userForm.valid"
         (click)="onLogin()"
+        test-id="submit"
       >
         Submit
       </button>
